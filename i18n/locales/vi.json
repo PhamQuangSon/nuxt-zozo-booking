@@ -1,0 +1,51 @@
+{
+  "common": {
+    "welcome": "Chào mừng đến với Zozo Booking",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "currency": {
+      "usd": "USD",
+      "vnd": "VND"
+    }
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "restaurants": "Nhà hàng",
+    "orders": "Đơn hàng",
+    "profile": "Hồ sơ",
+    "admin": "Quản trị",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất"
+  },
+  "restaurant": {
+    "featured": "Nhà hàng nổi bật",
+    "viewAll": "Xem tất cả nhà hàng",
+    "tables": "Bàn",
+    "menu": "Thực đơn",
+    "orders": "Đơn hàng"
+  },
+  "order": {
+    "new": "Mới",
+    "preparing": "Đang chuẩn bị",
+    "completed": "Hoàn thành",
+    "cancelled": "Đã hủy",
+    "total": "Tổng cộng",
+    "placeOrder": "Đặt hàng",
+    "viewOrder": "Xem đơn hàng",
+    "printReceipt": "In hóa đơn"
+  },
+  "receipt": {
+    "title": "Hóa đơn",
+    "orderNumber": "Đơn hàng #{number}",
+    "date": "Ngày: {date}",
+    "table": "Bàn: {table}",
+    "items": "Món",
+    "quantity": "SL",
+    "price": "Giá",
+    "subtotal": "Tạm tính",
+    "tax": "Thuế",
+    "total": "Tổng cộng",
+    "thankYou": "Cảm ơn quý khách đã đặt hàng!"
+  }
+}

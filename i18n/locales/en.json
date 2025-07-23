@@ -1,0 +1,51 @@
+{
+  "common": {
+    "welcome": "Welcome to Zozo Booking",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "currency": {
+      "usd": "USD",
+      "vnd": "VND"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "restaurants": "Restaurants",
+    "orders": "Orders",
+    "profile": "Profile",
+    "admin": "Admin",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "restaurant": {
+    "featured": "Featured Restaurants",
+    "viewAll": "View All Restaurants",
+    "tables": "Tables",
+    "menu": "Menu",
+    "orders": "Orders"
+  },
+  "order": {
+    "new": "New",
+    "preparing": "Preparing",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "viewOrder": "View Order",
+    "printReceipt": "Print Receipt"
+  },
+  "receipt": {
+    "title": "Receipt",
+    "orderNumber": "Order #{number}",
+    "date": "Date: {date}",
+    "table": "Table: {table}",
+    "items": "Items",
+    "quantity": "Qty",
+    "price": "Price",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "total": "Total",
+    "thankYou": "Thank you for your order!"
+  }
+}
