@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   vite: {
@@ -62,4 +63,5 @@ export default defineNuxtConfig({
     },
     databaseUrl: process.env.DATABASE_URL,
   },
+  components: true // Automatically import components
 });

@@ -1,4 +1,4 @@
-import { useCurrencyStore } from '../app/stores/currency'
+import { useCurrencyStore } from '../stores/currency'
 
 export function formatPrice(price: number): string {
   const currencyStore = useCurrencyStore()

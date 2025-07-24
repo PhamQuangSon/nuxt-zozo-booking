@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-800 text-white py-12">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 class="text-xl font-bold mb-4 flex items-center">
             <span class="text-primary">Zozo</span>
@@ -55,7 +55,7 @@
             <p>Phone: +1 (123) 456-7890</p>
           </address>
         </div>
-      </div>
+      </div> -->
       
       <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
         <p>&copy; {{ new Date().getFullYear() }} Zozo Booking. All rights reserved.</p>
