@@ -47,7 +47,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Eye } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({

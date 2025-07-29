@@ -58,7 +58,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { PlusCircle, Edit, QrCode } from 'lucide-vue-next'
 
 const tables = ref([
   { id: 1, number: 1, seats: 2, location: "Window", status: "Occupied" },

@@ -1,6 +1,6 @@
-import { useAuthStore } from '../stores/auth'
-import { useCurrencyStore } from '../stores/currency'
-import { useCartStore } from '../stores/cart'
+// import { useAuthStore } from '../stores/auth'
+// import { useCurrencyStore } from '../stores/currency'
+// import { useCartStore } from '../stores/cart'
 
 export default defineNuxtPlugin({
   name: 'init-app',

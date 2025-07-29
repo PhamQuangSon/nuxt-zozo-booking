@@ -156,7 +156,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { ArrowLeft, Star, MapPin, Clock } from 'lucide-vue-next'
 import { navigateTo } from '#app' // Import navigateTo for Nuxt 3
 
 const route = useRoute()

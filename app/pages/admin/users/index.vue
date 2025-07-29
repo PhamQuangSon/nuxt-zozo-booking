@@ -39,7 +39,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Edit, Trash2 } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({

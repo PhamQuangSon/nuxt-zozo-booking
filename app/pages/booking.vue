@@ -295,10 +295,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { 
-  ArrowLeft, ShoppingCart, Search, Star, Plus, Minus, 
-  User, CheckCircle 
-} from 'lucide-vue-next'
 import MenuItemDetailDialog from '@/components/MenuItemDetailDialog.vue'
 import CartDialog from '@/components/CartDialog.vue' // Import the new CartDialog
 

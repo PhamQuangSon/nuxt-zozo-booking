@@ -3,7 +3,7 @@
     <h2 class="text-2xl font-bold text-gray-900">Orders</h2>
 
     <div class="bg-white rounded-lg shadow-sm p-6">
-      <h3 class="text-lg font-semibold mb-4">Recent Orders for Pasta Paradise</h3>
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Orders for Pasta Paradise</h3>
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
@@ -49,7 +49,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Eye } from 'lucide-vue-next'
 
 const orders = ref([
   { id: "ORD001", customer: "Alice Brown", table: 5, total: 45.0, status: "Completed", time: "10:30 AM" },

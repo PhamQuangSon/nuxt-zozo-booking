@@ -7,7 +7,7 @@
       
       <div v-if="loading" class="text-center py-12">
         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-        <p class="mt-4 text-gray-600">Loading orders...</p>
+        <p class="mt-4 text-gray-600">{{ $t('common.loading') }}</p>
       </div>
       
       <div v-else-if="orders.length === 0" class="text-center py-12">
@@ -16,7 +16,7 @@
           to="/restaurants" 
           class="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
         >
-          Browse Restaurants
+          {{ $t('navigation.restaurants') }}
         </NuxtLink>
       </div>
       
@@ -28,7 +28,7 @@
         >
           <div class="flex justify-between items-start mb-4">
             <div>
-              <h3 class="text-lg font-semibold text-gray-900">Order #{{ order.id }}</h3>
+              <h3 class="text-lg font-semibold text-gray-900">{{ $t('receipt.orderNumber', { number: order.id }) }}</h3>
               <p class="text-gray-600">{{ order.restaurantName }}</p>
               <p class="text-sm text-gray-500">{{ formatDate(order.createdAt) }}</p>
             </div>
@@ -53,7 +53,7 @@
             </div>
             
             <div class="border-t mt-4 pt-4 flex justify-between items-center">
-              <span class="text-lg font-semibold text-gray-900">Total</span>
+              <span class="text-lg font-semibold text-gray-900">{{ $t('order.total') }}</span>
               <span class="text-lg font-bold text-orange-600">{{ formatCurrency(order.total) }}</span>
             </div>
           </div>
@@ -64,6 +64,7 @@
 </template>
 
 <script setup>
+
 const { formatCurrency } = useCurrencyStore()
 const loading = ref(true)
 
@@ -122,9 +123,9 @@ onMounted(() => {
 
 // SEO
 useHead({
-  title: 'My Orders - Zozo Booking',
+  title: `${$t('orders.title')} - Zozo Booking`,
   meta: [
-    { name: 'description', content: 'View your order history and track current orders.' }
+    { name: 'description', content: $t('orders.metaDescription') }
   ]
 })
 </script>

@@ -80,7 +80,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import { X, ShoppingCart, Plus, Minus } from 'lucide-vue-next'
 
 const props = defineProps({
   isVisible: {

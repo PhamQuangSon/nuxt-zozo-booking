@@ -42,9 +42,9 @@ export const useCartStore = defineStore('cart', {
       }, 0)
     },
     
-    tax: (state) => state.subtotal * 0.1, // 10% tax
+    tax: (state, getters: any) => getters.subtotal * 0.1, // 10% tax
     
-    total: (state) => state.subtotal + state.tax,
+    total: (state, getters: any) => getters.subtotal + getters.tax,
     
     isEmpty: (state) => state.items.length === 0
   },

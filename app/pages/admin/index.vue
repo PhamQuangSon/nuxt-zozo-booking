@@ -102,5 +102,4 @@ definePageMeta({
   layout: 'admin',
 })
 
-console.log('pages/admin/index.vue script setup executed!');
 </script>

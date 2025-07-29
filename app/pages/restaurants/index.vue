@@ -17,17 +17,17 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex flex-wrap gap-4">
           <select v-model="selectedCuisine" class="border rounded-lg px-4 py-2">
-            <option value="">All Cuisines</option>
-            <option value="vietnamese">Vietnamese</option>
-            <option value="italian">Italian</option>
-            <option value="japanese">Japanese</option>
-            <option value="chinese">Chinese</option>
+            <option value="">{{ $t('restaurants.allCuisines') }}</option>
+            <option value="vietnamese">{{ $t('restaurants.cuisine.vietnamese') }}</option>
+            <option value="italian">{{ $t('restaurants.cuisine.italian') }}</option>
+            <option value="japanese">{{ $t('restaurants.cuisine.japanese') }}</option>
+            <option value="chinese">{{ $t('restaurants.cuisine.chinese') }}</option>
           </select>
           
           <select v-model="sortBy" class="border rounded-lg px-4 py-2">
-            <option value="rating">Sort by Rating</option>
-            <option value="delivery">Sort by Delivery Time</option>
-            <option value="name">Sort by Name</option>
+            <option value="rating">{{ $t('restaurants.sort.rating') }}</option>
+            <option value="delivery">{{ $t('restaurants.sort.delivery') }}</option>
+            <option value="name">{{ $t('restaurants.sort.name') }}</option>
           </select>
         </div>
       </div>
@@ -38,7 +38,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div v-if="loading" class="text-center py-12">
           <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-          <p class="mt-4 text-gray-600">Loading restaurants...</p>
+          <p class="mt-4 text-gray-600">{{ $t('restaurants.loading') }}</p>
         </div>
         
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -50,7 +50,7 @@
         </div>
         
         <div v-if="!loading && filteredRestaurants.length === 0" class="text-center py-12">
-          <p class="text-gray-600">No restaurants found matching your criteria.</p>
+          <p class="text-gray-600">{{ $t('restaurants.noResults') }}</p>
         </div>
       </div>
     </section>
@@ -135,9 +135,9 @@ onMounted(() => {
 
 // SEO
 useHead({
-  title: 'Restaurants - Zozo Booking',
+  title: `${$t('restaurants.title')} - Zozo Booking`,
   meta: [
-    { name: 'description', content: 'Browse and order from the best restaurants in your area.' }
+    { name: 'description', content: $t('restaurants.metaDescription') }
   ]
 })
 </script>

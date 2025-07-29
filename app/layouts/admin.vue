@@ -195,23 +195,68 @@
         </NuxtLink>
       </nav>
       <div class="mt-auto space-y-2 border-t pt-4">
-        <!-- Pasta Paradise Dropdown (Placeholder) -->
-        <button
-          class="w-full justify-start text-lg font-medium text-gray-700 hover:bg-gray-100 flex items-center px-4 py-2 rounded-md transition-colors duration-200"
-        >
-          <Pizza class="mr-3 h-5 w-5" />
-          Pasta Paradise
-          <ChevronRight class="ml-auto h-4 w-4 rotate-90" />
-        </button>
+        <!-- Pasta Paradise Dropdown -->
+        <ClientOnly>
+          <div class="relative w-full">
+            <button
+              @click="toggleRestaurantSelector"
+              :class="[
+                'w-full justify-start text-lg font-medium text-gray-700 hover:bg-gray-100 flex items-center px-4 py-2 rounded-md transition-colors duration-200',
+                isRestaurantSelectorOpen || $route.path.startsWith('/admin/restaurants/pasta-paradise') ? 'bg-orange-50 text-white' : ''
+              ]"
+            >
+              <Pizza :class="['mr-3 h-5 w-5', $route.path.startsWith('/admin/restaurants/pasta-paradise') ? 'text-white' : 'text-gray-700']" />
+              <span :class="[$route.path.startsWith('/admin/restaurants/pasta-paradise') ? 'text-white' : 'text-gray-700']">
+                {{ selectedRestaurantName }}
+              </span>
+              <ChevronRight :class="['ml-auto h-4 w-4 transition-transform duration-200', { 'rotate-90': isRestaurantSelectorOpen }, $route.path.startsWith('/admin/restaurants/pasta-paradise') ? 'text-white' : 'text-gray-700']" />
+            </button>
+            <div v-if="isRestaurantSelectorOpen" class="absolute bottom-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 mb-2">
+              <button
+                @click="selectRestaurant('pasta-paradise')"
+                class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex items-center"
+              >
+                <Pizza class="mr-3 h-5 w-5 text-gray-700" />
+                Pasta Paradise
+              </button>
+              <!-- Add more restaurants here dynamically if needed -->
+            </div>
+          </div>
+        </ClientOnly>
 
-        <!-- USD Currency Selector (Placeholder) -->
-        <button
-          class="w-full justify-start text-lg font-medium text-gray-700 hover:bg-gray-100 flex items-center px-4 py-2 rounded-md transition-colors duration-200"
-        >
-          <DollarSign class="mr-3 h-5 w-5" />
-          USD
-          <ChevronRight class="ml-auto h-4 w-4 rotate-90" />
-        </button>
+        <!-- USD Currency Selector -->
+        <ClientOnly>
+          <div class="relative w-full">
+            <button
+              @click="toggleCurrencySelector"
+              class="w-full justify-start text-lg font-medium text-gray-700 hover:bg-gray-100 flex items-center px-4 py-2 rounded-md transition-colors duration-200"
+            >
+              <DollarSign class="mr-3 h-5 w-5" />
+              {{ selectedCurrency }}
+              <ChevronRight :class="['ml-auto h-4 w-4 transition-transform duration-200', { 'rotate-90': isCurrencySelectorOpen }]" />
+            </button>
+            <div v-if="isCurrencySelectorOpen" class="absolute bottom-full left-0 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 mb-2">
+              <button
+                @click="selectCurrency('USD')"
+                class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                USD
+              </button>
+              <button
+                @click="selectCurrency('EUR')"
+                class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                EUR
+              </button>
+              <button
+                @click="selectCurrency('GBP')"
+                class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                GBP
+              </button>
+            </div>
+          </div>
+        </ClientOnly>
 
         <!-- Login Button -->
         <button
@@ -231,43 +276,66 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-import {
-  Home,
-  Utensils,
-  CalendarCheck,
-  Users,
-  Settings,
-  LogOut,
-  QrCode,
-  LayoutGrid,
-  List,
-  Pizza,
-  Option,
-  ChevronRight,
-  LayoutDashboard, // Added for Pasta Paradise Overview
-  ListOrdered,     // Added for Pasta Paradise Orders
-  Book,            // Added for Pasta Paradise Menu Builder
-  DollarSign,      // Added for USD
-  LogIn            // Added for Login
-} from 'lucide-vue-next'
+import { ref, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
+
 const isRestaurantsOpen = ref(false)
-const isPastaParadiseOpen = ref(false) // New ref for Pasta Paradise collapsible
+const isPastaParadiseOpen = ref(false)
+const isRestaurantSelectorOpen = ref(false) // New ref for footer restaurant selector
+const isCurrencySelectorOpen = ref(false)   // New ref for footer currency selector
+const selectedCurrency = ref('USD')         // Default currency
 
 const toggleRestaurants = () => {
   isRestaurantsOpen.value = !isRestaurantsOpen.value
 }
 
-const togglePastaParadise = () => { // New toggle function
+const togglePastaParadise = () => {
   isPastaParadiseOpen.value = !isPastaParadiseOpen.value
 }
 
-// Ensure this hook is called at the top level
-// This will only run on the client after hydration, so the initial server render won't have this state.
-// The ClientOnly wrapper handles the mismatch.
+const toggleRestaurantSelector = () => {
+  isRestaurantSelectorOpen.value = !isRestaurantSelectorOpen.value
+  if (isRestaurantSelectorOpen.value) {
+    isCurrencySelectorOpen.value = false // Close other dropdown
+  }
+}
+
+const toggleCurrencySelector = () => {
+  isCurrencySelectorOpen.value = !isCurrencySelectorOpen.value
+  if (isCurrencySelectorOpen.value) {
+    isRestaurantSelectorOpen.value = false // Close other dropdown
+  }
+}
+
+const selectRestaurant = (id) => {
+  // In a real app, you might update a global state or navigate
+  // For now, we'll just navigate to the overview page of the selected restaurant
+  router.push(`/admin/restaurants/${id}`)
+  isRestaurantSelectorOpen.value = false
+}
+
+const selectCurrency = (currency) => {
+  selectedCurrency.value = currency
+  isCurrencySelectorOpen.value = false
+}
+
+// Computed property to display the selected restaurant name in the footer
+const selectedRestaurantName = computed(() => {
+  const currentRestaurantId = route.params.id
+  if (currentRestaurantId) {
+    // Simple capitalization for display, assuming ID is kebab-case
+    return String(currentRestaurantId)
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+  return 'Select Restaurant' // Default text if no restaurant is selected/active
+})
+
+// Ensure collapsible sections open based on current route on client-side
 const isClient = process.client
 const isRestaurantsPath = route.path.startsWith('/admin/restaurants') && route.path !== '/admin/restaurants'
 const isPastaParadisePath = route.path.startsWith('/admin/restaurants/pasta-paradise')
@@ -281,3 +349,7 @@ if (isClient) {
   }
 }
 </script>
+
+<style scoped>
+/* Add any specific styles if needed, though Tailwind should handle most */
+</style>

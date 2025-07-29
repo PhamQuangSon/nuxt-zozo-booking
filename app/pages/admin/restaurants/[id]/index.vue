@@ -5,7 +5,7 @@
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       <div class="bg-white rounded-lg shadow-sm p-6">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <h3 class="text-sm font-medium">Restaurant Revenue</h3>
+          <h3 class="text-sm font-medium text-gray-700">Restaurant Revenue</h3>
           <DollarSign class="h-4 w-4 text-gray-500" />
         </div>
         <div class="mt-1">
@@ -15,7 +15,7 @@
       </div>
       <div class="bg-white rounded-lg shadow-sm p-6">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <h3 class="text-sm font-medium">New Bookings</h3>
+          <h3 class="text-sm font-medium text-gray-700">New Bookings</h3>
           <CalendarCheck class="h-4 w-4 text-gray-500" />
         </div>
         <div class="mt-1">
@@ -25,7 +25,7 @@
       </div>
       <div class="bg-white rounded-lg shadow-sm p-6">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <h3 class="text-sm font-medium">Active Tables</h3>
+          <h3 class="text-sm font-medium text-gray-700">Active Tables</h3>
           <Users class="h-4 w-4 text-gray-500" />
         </div>
         <div class="mt-1">
@@ -35,7 +35,7 @@
       </div>
       <div class="bg-white rounded-lg shadow-sm p-6">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <h3 class="text-sm font-medium">Menu Items</h3>
+          <h3 class="text-sm font-medium text-gray-700">Menu Items</h3>
           <Utensils class="h-4 w-4 text-gray-500" />
         </div>
         <div class="mt-1">
@@ -61,7 +61,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { DollarSign, Users, Utensils, CalendarCheck } from 'lucide-vue-next'
 
 const restaurantStats = ref({
   totalRevenue: 12345.67,

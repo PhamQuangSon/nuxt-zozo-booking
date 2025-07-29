@@ -44,7 +44,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { PlusCircle, Edit, Trash2 } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({

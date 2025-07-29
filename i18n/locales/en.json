@@ -23,7 +23,21 @@
     "viewAll": "View All Restaurants",
     "tables": "Tables",
     "menu": "Menu",
-    "orders": "Orders"
+    "orders": "Orders",
+    "cuisine": {
+      "vietnamese": "Vietnamese",
+      "italian": "Italian",
+      "japanese": "Japanese",
+      "chinese": "Chinese"
+    },
+    "sort": {
+      "rating": "Sort by Rating",
+      "delivery": "Sort by Delivery Time",
+      "name": "Sort by Name"
+    },
+    "loading": "Loading restaurants...",
+    "noResults": "No restaurants found matching your criteria.",
+    "metaDescription": "Browse and order from the best restaurants in your area."      
   },
   "order": {
     "new": "New",
@@ -47,5 +61,17 @@
     "tax": "Tax",
     "total": "Total",
     "thankYou": "Thank you for your order!"
+  },
+  "orders": {
+    "title": "Orders",
+    "metaDescription": "View your order history and track current orders.",
+    "noOrders": "You have no orders yet.",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "preparing": "Preparing",
+      "ready": "Ready",
+      "delivered": "Delivered"
+    }
   }
 }

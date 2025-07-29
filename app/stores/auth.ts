@@ -36,7 +36,7 @@ export const useAuthStore = defineStore('auth', {
       
       try {
         // In a real app, this would be an API call
-        const response = await $fetch('/api/auth/login', {
+        const response: { user: User; token: string } = await $fetch('/api/auth/login', {
           method: 'POST',
           body: { email, password }
         })
@@ -83,7 +83,7 @@ export const useAuthStore = defineStore('auth', {
       
       try {
         // In a real app, this would be an API call
-        const user = await $fetch('/api/auth/me')
+        const user: User= await $fetch('/api/auth/me')
         this.user = user
         this.token = localStorage.getItem('auth_token')
       } catch (error) {

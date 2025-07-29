@@ -21,7 +21,8 @@ export const useCurrencyStore = defineStore('currency', {
     },
     
     formatPrice(price: number): string {
-      const amount = price * this.exchangeRates[this.currency]
+      const rate = this.exchangeRates[this.currency] ?? 1
+      const amount = price * rate
       
       if (this.currency === 'USD') {
         return new Intl.NumberFormat('en-US', {

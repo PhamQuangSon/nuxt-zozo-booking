@@ -151,7 +151,6 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue'
-import { X, Star, Plus, Minus } from 'lucide-vue-next'
 
 const props = defineProps({
   isVisible: {

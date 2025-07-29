@@ -7,9 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { useCurrencyStore } from './stores/currency';
-import { useCartStore } from './stores/cart';
-import { useAuthStore } from './stores/auth';
 
 // Set up the app metadata
 useHead({
@@ -22,6 +19,23 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
   ]
+})
+
+useSeoMeta({
+  ogTitle: '[og:title]',
+  ogDescription: '[og:description]',
+  ogImage: '[og:image]',
+  ogUrl: '[og:url]',
+  twitterTitle: '[twitter:title]',
+  twitterDescription: '[twitter:description]',
+  twitterImage: '[twitter:image]',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  }
 })
 
 // Initialize stores on app start

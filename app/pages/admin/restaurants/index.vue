@@ -55,11 +55,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { PlusCircle, Eye, Edit } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({
   layout: 'admin',
+  middleware: 'auth'
 })
 
 const restaurants = ref([

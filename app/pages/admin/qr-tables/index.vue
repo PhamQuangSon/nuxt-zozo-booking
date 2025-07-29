@@ -59,7 +59,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { PlusCircle, Download } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({

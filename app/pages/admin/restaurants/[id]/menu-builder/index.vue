@@ -54,7 +54,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { PlusCircle, Edit, Trash2 } from 'lucide-vue-next'
 
 const menuItems = ref([
   { id: 1, name: "Spaghetti Carbonara", category: "Main Courses", price: 18.5, status: "Active" },

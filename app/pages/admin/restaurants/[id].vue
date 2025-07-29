@@ -54,7 +54,7 @@
     </nav>
 
     <div class="flex-1">
-      <slot />
+      <NuxtPage />
     </div>
   </div>
 </template>
@@ -62,11 +62,11 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { ArrowLeft, LayoutDashboard, ListOrdered, Table, UtensilsCrossed } from 'lucide-vue-next'
 import { definePageMeta } from '#imports'
 
 definePageMeta({
   layout: 'admin',
+  middleware: 'auth'
 })
 
 const route = useRoute()

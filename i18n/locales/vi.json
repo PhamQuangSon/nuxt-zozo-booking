@@ -23,7 +23,21 @@
     "viewAll": "Xem tất cả nhà hàng",
     "tables": "Bàn",
     "menu": "Thực đơn",
-    "orders": "Đơn hàng"
+    "orders": "Đơn hàng",
+    "cuisine": {
+      "vietnamese": "Vietnamese",
+      "italian": "Italian",
+      "japanese": "Japanese",
+      "chinese": "Chinese"
+    },
+    "sort": {
+      "rating": "Sắp xếp theo đánh giá",
+      "delivery": "Sắp xếp theo thời gian giao hàng",
+      "name": "Sắp xếp theo tên"
+    },
+    "loading": "Đang tải nhà hàng...",
+    "noResults": "Không tìm thấy nhà hàng nào phù hợp với tiêu chí của bạn.",
+    "metaDescription": "Duyệt và đặt hàng từ những nhà hàng tốt nhất trong khu vực của bạn."
   },
   "order": {
     "new": "Mới",
@@ -47,5 +61,17 @@
     "tax": "Thuế",
     "total": "Tổng cộng",
     "thankYou": "Cảm ơn quý khách đã đặt hàng!"
+  },
+  "orders": {
+    "title": "Đơn hàng",
+    "metaDescription": "Xem lịch sử đơn hàng và theo dõi các đơn hiện tại.",
+    "noOrders": "Bạn chưa có đơn hàng nào.",
+    "status": {
+      "pending": "Chờ xác nhận",
+      "confirmed": "Đã xác nhận",
+      "preparing": "Đang chuẩn bị",
+      "ready": "Sẵn sàng",
+      "delivered": "Đã giao"
+    }
   }
 }
