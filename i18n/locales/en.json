@@ -73,5 +73,29 @@
       "ready": "Ready",
       "delivered": "Delivered"
     }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "dashboard": "Dashboard",
+    "qrTables": "QR Tables",
+    "restaurants": "Restaurants",
+    "allRestaurants": "All Restaurants",
+    "categories": "Categories",
+    "menuItems": "Menu Items",
+    "itemOptions": "Item Options",
+    "pastaParadise": "Pasta Paradise",
+    "overview": "Overview",
+    "orders": "Orders",
+    "listTables": "Tables",
+    "menuBuilder": "Menu Builder",
+    "bookings": "Bookings",
+    "users": "Users",
+    "login": "Login",
+    "selectRestaurant": "Select Restaurant",
+    "currency": {
+      "USD": "USD",
+      "EUR": "EUR",
+      "GBP": "GBP"
+    }
   }
 }

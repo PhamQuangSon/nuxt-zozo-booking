@@ -73,5 +73,29 @@
       "ready": "Sẵn sàng",
       "delivered": "Đã giao"
     }
+  },
+  "admin": {
+    "title": "Quản trị viên",
+    "dashboard": "Bảng điều khiển",
+    "qrTables": "Bàn QR",
+    "restaurants": "Nhà hàng",
+    "allRestaurants": "Tất cả nhà hàng",
+    "categories": "Danh mục",
+    "menuItems": "Món ăn",
+    "itemOptions": "Tùy chọn món",
+    "pastaParadise": "Pasta Paradise",
+    "overview": "Tổng quan",
+    "orders": "Đơn hàng",
+    "listTables": "Bàn",
+    "menuBuilder": "Xây dựng thực đơn",
+    "bookings": "Đặt bàn",
+    "users": "Người dùng",
+    "login": "Đăng nhập",
+    "selectRestaurant": "Chọn nhà hàng",
+    "currency": {
+      "USD": "USD",
+      "EUR": "EUR",
+      "GBP": "GBP"
+    }
   }
 }
