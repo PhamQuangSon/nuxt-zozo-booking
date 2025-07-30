@@ -3,9 +3,27 @@
     "welcome": "Welcome to Zozo Booking",
     "loading": "Loading...",
     "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
     "currency": {
       "usd": "USD",
-      "vnd": "VND"
+      "vnd": "VND",
+      "eur": "EUR",
+      "gbp": "GBP"
     }
   },
   "navigation": {
@@ -16,7 +34,9 @@
     "admin": "Admin",
     "login": "Login",
     "register": "Register",
-    "logout": "Logout"
+    "logout": "Logout",
+    "back": "Back",
+    "backToRestaurants": "Back to Restaurants"
   },
   "restaurant": {
     "featured": "Featured Restaurants",
@@ -24,6 +44,11 @@
     "tables": "Tables",
     "menu": "Menu",
     "orders": "Orders",
+    "name": "Restaurant Name",
+    "location": "Location",
+    "bookingsToday": "Bookings Today",
+    "revenue": "Revenue",
+    "performance": "Performance",
     "cuisine": {
       "vietnamese": "Vietnamese",
       "italian": "Italian",
@@ -37,7 +62,7 @@
     },
     "loading": "Loading restaurants...",
     "noResults": "No restaurants found matching your criteria.",
-    "metaDescription": "Browse and order from the best restaurants in your area."      
+    "metaDescription": "Browse and order from the best restaurants in your area."
   },
   "order": {
     "new": "New",
@@ -45,9 +70,17 @@
     "completed": "Completed",
     "cancelled": "Cancelled",
     "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
     "placeOrder": "Place Order",
     "viewOrder": "View Order",
-    "printReceipt": "Print Receipt"
+    "printReceipt": "Print Receipt",
+    "orderNumber": "Order Number",
+    "orderID": "Order ID",
+    "customer": "Customer",
+    "table": "Table",
+    "time": "Time",
+    "date": "Date"
   },
   "receipt": {
     "title": "Receipt",
@@ -64,6 +97,8 @@
   },
   "orders": {
     "title": "Orders",
+    "recentOrders": "Recent Orders",
+    "allOrders": "All Orders",
     "metaDescription": "View your order history and track current orders.",
     "noOrders": "You have no orders yet.",
     "status": {
@@ -77,25 +112,113 @@
   "admin": {
     "title": "Admin Panel",
     "dashboard": "Dashboard",
+    "overview": "Overview",
+    "statistics": "Statistics",
+    "analytics": "Analytics",
+
     "qrTables": "QR Tables",
+    "qrTableManagement": "QR Table Management",
+    "qrTableList": "QR Table List",
+    "addNewQRTable": "Add New QR Table",
+    "tableNumber": "Table Number",
+    "qrCode": "QR Code",
+    "downloadQR": "Download QR",
+
     "restaurants": "Restaurants",
     "allRestaurants": "All Restaurants",
+    "restaurantList": "Restaurant List",
+    "addNewRestaurant": "Add New Restaurant",
+    "restaurantRevenue": "Restaurant Revenue",
+    "activeRestaurants": "Active Restaurants",
+    "restaurantPerformance": "Restaurant Performance",
+
     "categories": "Categories",
+    "menuCategories": "Menu Categories",
+    "categoryList": "Category List",
+    "addNewCategory": "Add New Category",
+    "categoryName": "Category Name",
+    "itemsCount": "Items Count",
+
     "menuItems": "Menu Items",
+    "allMenuItems": "All Menu Items",
+    "addNewItem": "Add New Item",
+    "itemName": "Item Name",
+    "category": "Category",
+    "price": "Price",
+
     "itemOptions": "Item Options",
+    "allItemOptions": "All Item Options",
+    "addNewOption": "Add New Option",
+    "optionType": "Type",
+    "optionName": "Name",
+    "appliesTo": "Applies To",
+
     "pastaParadise": "Pasta Paradise",
-    "overview": "Overview",
     "orders": "Orders",
+    "recentOrdersFor": "Recent Orders for {restaurant}",
+    "newBookings": "New Bookings",
+    "activeTables": "Active Tables",
+    "currentlyOccupied": "Currently occupied",
+    "totalItemsOnMenu": "Total items on menu",
+
     "listTables": "Tables",
+    "tableList": "Table List",
+    "addNewTable": "Add New Table",
+    "seats": "Seats",
+    "tableLocation": "Location",
+    "tableStatus": "Status",
+    "available": "Available",
+    "occupied": "Occupied",
+    "booked": "Booked",
+
     "menuBuilder": "Menu Builder",
+    "menuItemsFor": "Menu Items for {restaurant}",
+    "addNewMenuItem": "Add New Menu Item",
+
     "bookings": "Bookings",
+    "bookingsManagement": "Bookings Management",
+    "allBookings": "All Bookings",
+    "bookingID": "Booking ID",
+    "dateTime": "Date & Time",
+    "totalBookings": "Total Bookings",
+
     "users": "Users",
+    "userManagement": "User Management",
+    "allUsers": "All Users",
+    "userName": "Name",
+    "email": "Email",
+    "role": "Role",
+    "lastLogin": "Last Login",
+    "newUsers": "New Users",
+
+    "settings": "Settings",
     "login": "Login",
+    "logout": "Logout",
     "selectRestaurant": "Select Restaurant",
+
+    "revenue": {
+      "total": "Total Revenue",
+      "thisMonth": "+{percent}% this month",
+      "fromLastMonth": "+{percent}% from last month"
+    },
+
     "currency": {
       "USD": "USD",
       "EUR": "EUR",
       "GBP": "GBP"
+    },
+
+    "timeframes": {
+      "today": "Today",
+      "thisWeek": "This week",
+      "thisMonth": "This month",
+      "sinceLastMonth": "+{count} since last month"
+    },
+
+    "placeholders": {
+      "chartData": "Chart data will go here",
+      "recentOrders": "Recent orders for this restaurant will be displayed here.",
+      "performanceChart": "Performance Chart"
     }
   }
 }

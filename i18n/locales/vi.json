@@ -3,9 +3,27 @@
     "welcome": "Chào mừng đến với Zozo Booking",
     "loading": "Đang tải...",
     "error": "Đã xảy ra lỗi",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "view": "Xem",
+    "add": "Thêm",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "actions": "Thao tác",
+    "status": "Trạng thái",
+    "active": "Hoạt động",
+    "inactive": "Không hoạt động",
+    "pending": "Chờ xử lý",
+    "confirmed": "Đã xác nhận",
+    "completed": "Hoàn thành",
+    "cancelled": "Đã hủy",
     "currency": {
       "usd": "USD",
-      "vnd": "VND"
+      "vnd": "VND",
+      "eur": "EUR",
+      "gbp": "GBP"
     }
   },
   "navigation": {
@@ -16,7 +34,9 @@
     "admin": "Quản trị",
     "login": "Đăng nhập",
     "register": "Đăng ký",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "back": "Quay lại",
+    "backToRestaurants": "Quay lại Nhà hàng"
   },
   "restaurant": {
     "featured": "Nhà hàng nổi bật",
@@ -24,11 +44,16 @@
     "tables": "Bàn",
     "menu": "Thực đơn",
     "orders": "Đơn hàng",
+    "name": "Tên nhà hàng",
+    "location": "Vị trí",
+    "bookingsToday": "Đặt bàn hôm nay",
+    "revenue": "Doanh thu",
+    "performance": "Hiệu suất",
     "cuisine": {
-      "vietnamese": "Vietnamese",
-      "italian": "Italian",
-      "japanese": "Japanese",
-      "chinese": "Chinese"
+      "vietnamese": "Việt Nam",
+      "italian": "Ý",
+      "japanese": "Nhật Bản",
+      "chinese": "Trung Quốc"
     },
     "sort": {
       "rating": "Sắp xếp theo đánh giá",
@@ -45,9 +70,17 @@
     "completed": "Hoàn thành",
     "cancelled": "Đã hủy",
     "total": "Tổng cộng",
+    "subtotal": "Tạm tính",
+    "tax": "Thuế",
     "placeOrder": "Đặt hàng",
     "viewOrder": "Xem đơn hàng",
-    "printReceipt": "In hóa đơn"
+    "printReceipt": "In hóa đơn",
+    "orderNumber": "Số đơn hàng",
+    "orderID": "Mã đơn hàng",
+    "customer": "Khách hàng",
+    "table": "Bàn",
+    "time": "Thời gian",
+    "date": "Ngày"
   },
   "receipt": {
     "title": "Hóa đơn",
@@ -64,6 +97,8 @@
   },
   "orders": {
     "title": "Đơn hàng",
+    "recentOrders": "Đơn hàng gần đây",
+    "allOrders": "Tất cả đơn hàng",
     "metaDescription": "Xem lịch sử đơn hàng và theo dõi các đơn hiện tại.",
     "noOrders": "Bạn chưa có đơn hàng nào.",
     "status": {
@@ -77,25 +112,113 @@
   "admin": {
     "title": "Quản trị viên",
     "dashboard": "Bảng điều khiển",
+    "overview": "Tổng quan",
+    "statistics": "Thống kê",
+    "analytics": "Phân tích",
+
     "qrTables": "Bàn QR",
+    "qrTableManagement": "Quản lý Bàn QR",
+    "qrTableList": "Danh sách Bàn QR",
+    "addNewQRTable": "Thêm Bàn QR mới",
+    "tableNumber": "Số bàn",
+    "qrCode": "Mã QR",
+    "downloadQR": "Tải QR",
+
     "restaurants": "Nhà hàng",
     "allRestaurants": "Tất cả nhà hàng",
+    "restaurantList": "Danh sách nhà hàng",
+    "addNewRestaurant": "Thêm nhà hàng mới",
+    "restaurantRevenue": "Doanh thu nhà hàng",
+    "activeRestaurants": "Nhà hàng hoạt động",
+    "restaurantPerformance": "Hiệu suất nhà hàng",
+
     "categories": "Danh mục",
+    "menuCategories": "Danh mục thực đơn",
+    "categoryList": "Danh sách danh mục",
+    "addNewCategory": "Thêm danh mục mới",
+    "categoryName": "Tên danh mục",
+    "itemsCount": "Số lượng món",
+
     "menuItems": "Món ăn",
+    "allMenuItems": "Tất cả món ăn",
+    "addNewItem": "Thêm món mới",
+    "itemName": "Tên món",
+    "category": "Danh mục",
+    "price": "Giá",
+
     "itemOptions": "Tùy chọn món",
+    "allItemOptions": "Tất cả tùy chọn món",
+    "addNewOption": "Thêm tùy chọn mới",
+    "optionType": "Loại",
+    "optionName": "Tên",
+    "appliesTo": "Áp dụng cho",
+
     "pastaParadise": "Pasta Paradise",
-    "overview": "Tổng quan",
     "orders": "Đơn hàng",
+    "recentOrdersFor": "Đơn hàng gần đây cho {restaurant}",
+    "newBookings": "Đặt bàn mới",
+    "activeTables": "Bàn đang sử dụng",
+    "currentlyOccupied": "Hiện đang có khách",
+    "totalItemsOnMenu": "Tổng số món trong thực đơn",
+
     "listTables": "Bàn",
+    "tableList": "Danh sách bàn",
+    "addNewTable": "Thêm bàn mới",
+    "seats": "Số ghế",
+    "tableLocation": "Vị trí",
+    "tableStatus": "Trạng thái bàn",
+    "available": "Có sẵn",
+    "occupied": "Đang sử dụng",
+    "booked": "Đã đặt",
+
     "menuBuilder": "Xây dựng thực đơn",
+    "menuItemsFor": "Món ăn cho {restaurant}",
+    "addNewMenuItem": "Thêm món ăn mới",
+
     "bookings": "Đặt bàn",
+    "bookingsManagement": "Quản lý đặt bàn",
+    "allBookings": "Tất cả đặt bàn",
+    "bookingID": "Mã đặt bàn",
+    "dateTime": "Ngày & Giờ",
+    "totalBookings": "Tổng số đặt bàn",
+
     "users": "Người dùng",
+    "userManagement": "Quản lý người dùng",
+    "allUsers": "Tất cả người dùng",
+    "userName": "Tên",
+    "email": "Email",
+    "role": "Vai trò",
+    "lastLogin": "Đăng nhập cuối",
+    "newUsers": "Người dùng mới",
+
+    "settings": "Cài đặt",
     "login": "Đăng nhập",
+    "logout": "Đăng xuất",
     "selectRestaurant": "Chọn nhà hàng",
+
+    "revenue": {
+      "total": "Tổng doanh thu",
+      "thisMonth": "+{percent}% tháng này",
+      "fromLastMonth": "+{percent}% từ tháng trước"
+    },
+
     "currency": {
       "USD": "USD",
       "EUR": "EUR",
       "GBP": "GBP"
+    },
+
+    "timeframes": {
+      "today": "Hôm nay",
+      "thisWeek": "Tuần này",
+      "thisMonth": "Tháng này",
+      "sinceLastMonth": "+{count} từ tháng trước"
+    },
+
+    "placeholders": {
+      "chartData": "Dữ liệu biểu đồ sẽ hiển thị ở đây",
+      "recentOrders": "Đơn hàng gần đây cho nhà hàng này sẽ được hiển thị ở đây.",
+      "performanceChart": "Biểu đồ hiệu suất"
     }
   }
 }

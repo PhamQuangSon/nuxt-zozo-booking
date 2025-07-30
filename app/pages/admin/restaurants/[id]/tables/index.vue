@@ -1,11 +1,11 @@
 <template>
   <div class="space-y-8">
-    <h2 class="text-2xl font-bold text-gray-900">Tables</h2>
+    <h2 class="text-2xl font-bold text-gray-900">{{ $t('admin.listTables') }}</h2>
 
     <div class="flex items-center justify-between">
-      <h3 class="text-xl font-semibold">Table List for Pasta Paradise</h3>
+      <h3 class="text-xl font-semibold">{{ $t('admin.tableList') }} {{ $t('admin.pastaParadise') }}</h3>
       <button class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 flex items-center">
-        <PlusCircle class="mr-2 h-4 w-4" /> Add New Table
+        <PlusCircle class="mr-2 h-4 w-4" /> {{ $t('admin.addNewTable') }}
       </button>
     </div>
 
@@ -14,11 +14,11 @@
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Table Number</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Seats</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.tableNumber') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.seats') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.tableLocation') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('common.status') }}</th>
+              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('common.actions') }}</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
@@ -37,15 +37,15 @@
                         : 'bg-yellow-100 text-yellow-800'
                   ]"
                 >
-                  {{ table.status }}
+                  {{ $t(table.status === 'Available' ? 'admin.available' : table.status === 'Occupied' ? 'admin.occupied' : 'admin.booked') }}
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button class="text-gray-600 hover:text-gray-900 mr-2 p-2 rounded-md hover:bg-gray-100">
-                  <QrCode class="h-4 w-4" /> QR
+                <button class="text-gray-600 hover:text-gray-900 mr-2 p-2 rounded-md hover:bg-gray-100" :title="$t('admin.qrCode')">
+                  <QrCode class="h-4 w-4" />
                 </button>
-                <button class="text-orange-600 hover:text-orange-900 p-2 rounded-md hover:bg-orange-50">
-                  <Edit class="h-4 w-4" /> Edit
+                <button class="text-orange-600 hover:text-orange-900 p-2 rounded-md hover:bg-orange-50" :title="$t('common.edit')">
+                  <Edit class="h-4 w-4" />
                 </button>
               </td>
             </tr>
@@ -58,6 +58,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { PlusCircle, Edit, QrCode } from 'lucide-vue-next'
 
 const tables = ref([
   { id: 1, number: 1, seats: 2, location: "Window", status: "Occupied" },

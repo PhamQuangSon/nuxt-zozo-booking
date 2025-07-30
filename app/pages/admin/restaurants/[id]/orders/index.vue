@@ -1,20 +1,20 @@
 <template>
   <div class="space-y-8">
-    <h2 class="text-2xl font-bold text-gray-900">Orders</h2>
+    <h2 class="text-2xl font-bold text-gray-900">{{ $t('admin.orders') }}</h2>
 
     <div class="bg-white rounded-lg shadow-sm p-6">
-      <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Orders for Pasta Paradise</h3>
+      <h3 class="text-lg font-semibold mb-4">{{ $t('admin.recentOrdersFor', { restaurant: 'Pasta Paradise' }) }}</h3>
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Table</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('order.orderID') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('order.customer') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('order.table') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('order.total') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('common.status') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('order.time') }}</th>
+              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('common.actions') }}</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
@@ -30,13 +30,13 @@
                     order.status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
                   ]"
                 >
-                  {{ order.status }}
+                  {{ $t(order.status === 'Completed' ? 'common.completed' : 'common.pending') }}
                 </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ order.time }}</td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button class="text-gray-600 hover:text-gray-900 p-2 rounded-md hover:bg-gray-100">
-                  <Eye class="h-4 w-4" /> View
+                <button class="text-gray-600 hover:text-gray-900 p-2 rounded-md hover:bg-gray-100" :title="$t('common.view')">
+                  <Eye class="h-4 w-4" />
                 </button>
               </td>
             </tr>

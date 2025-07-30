@@ -1,18 +1,18 @@
 <template>
   <div class="space-y-8">
-    <h1 class="text-3xl font-bold text-gray-900">User Management</h1>
+    <h1 class="text-3xl font-bold text-gray-900">{{ $t('admin.userManagement') }}</h1>
 
     <div class="bg-white rounded-lg shadow-sm p-6">
-      <h3 class="text-lg font-semibold mb-4">All Users</h3>
+      <h3 class="text-lg font-semibold mb-4">{{ $t('admin.allUsers') }}</h3>
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Login</th>
-              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.userName') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.email') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.role') }}</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('admin.lastLogin') }}</th>
+              <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $t('common.actions') }}</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
@@ -22,10 +22,10 @@
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ user.role }}</td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ user.lastLogin }}</td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button class="text-orange-600 hover:text-orange-900 mr-2 p-2 rounded-md hover:bg-orange-50">
+                <button class="text-orange-600 hover:text-orange-900 mr-2 p-2 rounded-md hover:bg-orange-50" :title="$t('common.edit')">
                   <Edit class="h-4 w-4" />
                 </button>
-                <button class="text-red-600 hover:text-red-900 p-2 rounded-md hover:bg-red-50">
+                <button class="text-red-600 hover:text-red-900 p-2 rounded-md hover:bg-red-50" :title="$t('common.delete')">
                   <Trash2 class="h-4 w-4" />
                 </button>
               </td>
