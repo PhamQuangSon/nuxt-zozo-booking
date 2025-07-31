@@ -34,7 +34,7 @@
 
       <!-- Restaurants Section with Sub-navigation -->
       <ClientOnly>
-        <div :class="['w-full', isRestaurantsOpen || $route.path.startsWith(localePath('/admin/restaurants')) ? '' : 'hidden']">
+        <div class="w-full">
           <button
             @click="toggleRestaurants"
             :class="[
@@ -101,64 +101,64 @@
         </button>
       </NuxtLink>
 
-      <!-- Dynamic Restaurant Sections with Sub-navigation -->
+      <!-- Dynamic Restaurant Section - Show only selected restaurant -->
       <ClientOnly>
-        <div class="w-full" v-for="restaurant in restaurants" :key="restaurant.id">
+        <div class="w-full" v-if="selectedRestaurantId && selectedRestaurant">
           <button
-            @click="toggleRestaurant(restaurant.id)"
+            @click="toggleRestaurant(selectedRestaurantId)"
             :class="[
               'w-full justify-start text-lg font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600',
               'flex items-center px-4 py-2 rounded-md transition-colors duration-200',
-              openRestaurants[restaurant.id] || $route.path.startsWith(localePath(`/admin/restaurants/${restaurant.id}`)) ? 'bg-orange-50 text-orange-600' : ''
+              openRestaurants[selectedRestaurantId] || $route.path.startsWith(localePath(`/admin/restaurants/${selectedRestaurantId}`)) ? 'bg-orange-50 text-orange-600' : ''
             ]"
           >
             <Pizza class="mr-3 h-5 w-5" />
-            {{ restaurant.name }}
-            <ChevronRight :class="['ml-auto h-4 w-4 transition-transform duration-200', { 'rotate-90': openRestaurants[restaurant.id] }]" />
+            {{ selectedRestaurant.name }}
+            <ChevronRight :class="['ml-auto h-4 w-4 transition-transform duration-200', { 'rotate-90': openRestaurants[selectedRestaurantId] }]" />
           </button>
-          <div v-if="openRestaurants[restaurant.id]" class="ml-6 space-y-1 mt-1">
-            <NuxtLink :to="localePath(`/admin/restaurants/${restaurant.id}`)" class="block">
+          <div v-if="openRestaurants[selectedRestaurantId]" class="ml-6 space-y-1 mt-1">
+            <NuxtLink :to="localePath(`/admin/restaurants/${selectedRestaurantId}`)" class="block">
               <button
                 :class="[
                   'w-full justify-start text-base text-gray-600 hover:bg-orange-50 hover:text-orange-600',
                   'flex items-center px-4 py-2 rounded-md transition-colors duration-200',
-                  $route.path === localePath(`/admin/restaurants/${restaurant.id}`) ? 'bg-orange-50 text-orange-600' : ''
+                  $route.path === localePath(`/admin/restaurants/${selectedRestaurantId}`) ? 'bg-orange-50 text-orange-600' : ''
                 ]"
               >
                 <LayoutDashboard class="mr-3 h-4 w-4" />
                 {{ $t('admin.overview') }}
               </button>
             </NuxtLink>
-            <NuxtLink :to="localePath(`/admin/restaurants/${restaurant.id}/orders`)" class="block">
+            <NuxtLink :to="localePath(`/admin/restaurants/${selectedRestaurantId}/orders`)" class="block">
               <button
                 :class="[
                   'w-full justify-start text-base text-gray-600 hover:bg-orange-50 hover:text-orange-600',
                   'flex items-center px-4 py-2 rounded-md transition-colors duration-200',
-                  $route.path === localePath(`/admin/restaurants/${restaurant.id}/orders`) ? 'bg-orange-50 text-orange-600' : ''
+                  $route.path === localePath(`/admin/restaurants/${selectedRestaurantId}/orders`) ? 'bg-orange-50 text-orange-600' : ''
                 ]"
               >
                 <ListOrdered class="mr-3 h-4 w-4" />
                 {{ $t('admin.orders') }}
               </button>
             </NuxtLink>
-            <NuxtLink :to="localePath(`/admin/restaurants/${restaurant.id}/tables`)" class="block">
+            <NuxtLink :to="localePath(`/admin/restaurants/${selectedRestaurantId}/tables`)" class="block">
               <button
                 :class="[
                   'w-full justify-start text-base text-gray-600 hover:bg-orange-50 hover:text-orange-600',
                   'flex items-center px-4 py-2 rounded-md transition-colors duration-200',
-                  $route.path === localePath(`/admin/restaurants/${restaurant.id}/tables`) ? 'bg-orange-50 text-orange-600' : ''
+                  $route.path === localePath(`/admin/restaurants/${selectedRestaurantId}/tables`) ? 'bg-orange-50 text-orange-600' : ''
                 ]"
               >
                 <LayoutGrid class="mr-3 h-4 w-4" />
                 {{ $t('admin.listTables') }}
               </button>
             </NuxtLink>
-            <NuxtLink :to="localePath(`/admin/restaurants/${restaurant.id}/menu-builder`)" class="block">
+            <NuxtLink :to="localePath(`/admin/restaurants/${selectedRestaurantId}/menu-builder`)" class="block">
               <button
                 :class="[
                   'w-full justify-start text-base text-gray-600 hover:bg-orange-50 hover:text-orange-600',
                   'flex items-center px-4 py-2 rounded-md transition-colors duration-200',
-                  $route.path === localePath(`/admin/restaurants/${restaurant.id}/menu-builder`) ? 'bg-orange-50 text-orange-600' : ''
+                  $route.path === localePath(`/admin/restaurants/${selectedRestaurantId}/menu-builder`) ? 'bg-orange-50 text-orange-600' : ''
                 ]"
               >
                 <Book class="mr-3 h-4 w-4" />
@@ -239,9 +239,12 @@
               v-for="restaurant in restaurants"
               :key="restaurant.id"
               @click="selectRestaurant(restaurant.id)"
-              class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex items-center"
+              :class="[
+                'w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex items-center',
+                selectedRestaurantId === restaurant.id ? 'bg-orange-50 text-orange-600' : ''
+              ]"
             >
-              <Pizza class="mr-3 h-5 w-5 text-gray-700" /> {{ restaurant.name }}
+              <Pizza class="mr-3 h-5 w-5" /> {{ restaurant.name }}
             </button>
           </div>
         </div>
@@ -299,7 +302,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useNuxtApp } from '#app'
@@ -342,11 +345,20 @@ const restaurants = ref([
   { id: "burger-bliss", name: "Burger Bliss" },
 ])
 
+// Selected restaurant state
+const selectedRestaurantId = ref(null)
+
+// Computed property to get the selected restaurant object
+const selectedRestaurant = computed(() => {
+  if (!selectedRestaurantId.value) return null
+  return restaurants.value.find(r => r.id === selectedRestaurantId.value)
+})
+
 // Replace the single isPastaParadiseOpen with dynamic tracking
 const openRestaurants = ref({})
 
 const toggleRestaurants = () => {
-isRestaurantsOpen.value = !isRestaurantsOpen.value
+  isRestaurantsOpen.value = !isRestaurantsOpen.value
 }
 
 // Replace togglePastaParadise with dynamic toggle function
@@ -355,40 +367,55 @@ const toggleRestaurant = (restaurantId) => {
 }
 
 const toggleRestaurantSelector = () => {
-isRestaurantSelectorOpen.value = !isRestaurantSelectorOpen.value
-if (isRestaurantSelectorOpen.value) {
-  isCurrencySelectorOpen.value = false
-}
+  isRestaurantSelectorOpen.value = !isRestaurantSelectorOpen.value
+  if (isRestaurantSelectorOpen.value) {
+    isCurrencySelectorOpen.value = false
+  }
 }
 
 const toggleCurrencySelector = () => {
-isCurrencySelectorOpen.value = !isCurrencySelectorOpen.value
-if (isCurrencySelectorOpen.value) {
-  isRestaurantSelectorOpen.value = false
-}
+  isCurrencySelectorOpen.value = !isCurrencySelectorOpen.value
+  if (isCurrencySelectorOpen.value) {
+    isRestaurantSelectorOpen.value = false
+  }
 }
 
 const selectRestaurant = (id) => {
-router.push(localePath(`/admin/restaurants/${id}`))
-isRestaurantSelectorOpen.value = false
+  selectedRestaurantId.value = id
+  // Auto-open the selected restaurant section
+  openRestaurants.value[id] = true
+  // Navigate to the restaurant overview page
+  router.push(localePath(`/admin/restaurants/${id}`))
+  isRestaurantSelectorOpen.value = false
 }
 
 const selectCurrency = (currency) => {
-selectedCurrency.value = currency
-isCurrencySelectorOpen.value = false
+  selectedCurrency.value = currency
+  isCurrencySelectorOpen.value = false
 }
 
 const selectedRestaurantName = computed(() => {
-const currentRestaurantId = route.params.id
-if (currentRestaurantId) {
-  const restaurant = restaurants.value.find(r => r.id === currentRestaurantId)
-  return restaurant ? restaurant.name : String(currentRestaurantId)
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ")
-}
-return t('admin.selectRestaurant')
+  const currentRestaurantId = route.params.id
+  if (currentRestaurantId) {
+    const restaurant = restaurants.value.find(r => r.id === currentRestaurantId)
+    return restaurant ? restaurant.name : String(currentRestaurantId)
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+  if (selectedRestaurant.value) {
+    return selectedRestaurant.value.name
+  }
+  return t('admin.selectRestaurant')
 })
+
+// Watch route changes to update selected restaurant
+watch(() => route.params.id, (newId) => {
+  if (newId && restaurants.value.find(r => r.id === newId)) {
+    selectedRestaurantId.value = newId
+    openRestaurants.value[newId] = true
+  }
+}, { immediate: true })
 
 // Auto-open collapsible sections based on current route
 const isClient = process.client
@@ -399,9 +426,10 @@ const openRestaurantsOnClient = () => {
     if (isRestaurantsPath) {
       isRestaurantsOpen.value = true
     }
-    // Auto-open the current restaurant section
+    // Auto-open the current restaurant section and set as selected
     const currentRestaurantId = route.params.id
     if (currentRestaurantId && restaurants.value.find(r => r.id === currentRestaurantId)) {
+      selectedRestaurantId.value = currentRestaurantId
       openRestaurants.value[currentRestaurantId] = true
     }
   }
