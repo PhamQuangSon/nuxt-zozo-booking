@@ -29,6 +29,23 @@
       "gbp": "GBP"
     }
   },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create your account",
+    "login": "Sign In",
+    "register": "Register",
+    "name": "Name",
+    "phone": "Phone",
+    "confirmPassword": "Confirm Password",
+    "email": "Email",
+    "password": "Password",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signingIn": "Signing in...",
+    "signingUp": "Signing up...",
+    "loginFailed": "Login failed. Please try again.",
+    "registerFailed": "Registration failed. Please try again."
+  },  
   "navigation": {
     "home": "Home",
     "restaurants": "Restaurants",

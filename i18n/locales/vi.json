@@ -29,6 +29,23 @@
       "gbp": "GBP"
     }
   },
+  "auth": {
+    "loginTitle": "Đăng nhập vào tài khoản",
+    "registerTitle": "Tạo tài khoản mới",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "name": "Tên",
+    "phone": "Điện thoại",
+    "confirmPassword": "Xác nhận mật khẩu",   
+    "email": "Email",
+    "password": "Mật khẩu",
+    "dontHaveAccount": "Chưa có tài khoản?",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "signingIn": "Đang đăng nhập...",
+    "signingUp": "Đang đăng ký...",
+    "loginFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+    "registerFailed": "Đăng ký thất bại. Vui lòng thử lại."
+  },  
   "navigation": {
     "home": "Trang chủ",
     "restaurants": "Nhà hàng",
